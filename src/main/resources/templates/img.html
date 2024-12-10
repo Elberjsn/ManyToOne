@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+
+	
+
+		function editProd(id){
+			if(id!=0){			let camposTable={
+							"Departamento":["dep-"+id]
+						}
+						document.getElementById("nomeDep").value =  document.getElementById(camposTable.Departamento).innerText	
+						document.getElementById("idDep").value =  id;		
+						document.getElementById("btn-delete").href="/deletarDep/"+id
+						
+						
+						$("#nomeDep").focus().blur();
+						}
+			$("#group-btns").toggle()
+		}
+	</script>
+	<style>
+		a{color: inherit;}
+		.error{
+			color:red;
+		}
+		.btn-flat:hover{
+			background-color: transparent;
+			border-radius: 10px;
+			border: 1px solid;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div th:replace="~{fragments :: header}"></div>
+
+	
+<div class="container">
+
+	<div class="card">
+		<div class="row">
+			<div class="col s12 m6">
+			  <div class="card ">
+				<div class="card-content ">
+				  <span class="card-title"><strong>Desenvolvido por</strong></span>
+				  <p>Elber José Silva Nascimento – RA: F3565I6</p>
+				  <p>Guilherme Lemos Freitas – RA: G853BH3 </p>
+				  <p>Uma Aplicação do tipo "Um para Muitos" para a materia LPOO</p>
+				</div>
+				
+			  </div>
+			</div>
+		  </div>
+		<div class="card-image waves-effect waves-block waves-light">
+		  <img class=" activator materialboxed" width="600" th:src="@{/Diagramas.png}">
+		</div>
+		
+	  </div>
+</div>
+	
+	  
+				
+	
+</body>
+
+</html>
